@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our SaaS App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!-- Add any additional CSS styles here -->
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron mt-5">
+            <h1 class="display-4">Welcome to Our SaaS Platform!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <div class="centered-div">
+                <a href="{{ url_for('logout') }}" class="btn btn-primary icon-button">
+                    <i class="fas fa-sign-in-alt"></i> Logout
+                </a>
+            </div>
+            <hr class="my-4">
+            <h1 class="text-center mt-5">Welcome, {{ username }}!</h1>
+            <hr class="my-4">
+            <!-- Session Values Section -->
+            <div>
+                <h2>Session Values:</h2>
+                <ul>
+                    {% for key, value in session.items() %}
+                        <li>{{ key }}: {{ value }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
